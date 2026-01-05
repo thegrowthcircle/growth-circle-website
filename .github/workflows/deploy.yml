@@ -29,11 +29,9 @@ jobs:
 
       - name: Deploy via LFTP
         run: |
-          # Navigate to specific domain folder (adjust if 'domains' folder is missing)
-          cd out
+          # DEBUG: List all files to find the right path
           lftp -e "set ssl:verify-certificate no; \
                    open ${{ secrets.FTP_SERVER }}; \
                    user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; \
-                   cd domains/thegrowthcircle.co.in/public_html || cd public_html; \
-                   mirror --reverse --verbose --delete --parallel=2 . .; \
+                   ls -R; \
                    bye"
