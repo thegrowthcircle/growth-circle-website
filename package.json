@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy-direct": "node deploy.js"
   },
   "dependencies": {
     "next": "16.1.1",
@@ -16,6 +17,8 @@
   "devDependencies": {
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.1.1"
+    "eslint-config-next": "16.1.1",
+    "ftp-deploy": "^2.4.7",
+    "readline-sync": "^1.4.10"
   }
 }
