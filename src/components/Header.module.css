@@ -1,0 +1,75 @@
+.header {
+    height: 100px;
+    /* Increased height to accommodate logo + tagline if needed */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    /* Increased padding */
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.logoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centered alignment for logo + tagline */
+    text-decoration: none;
+}
+
+.logoImage {
+    object-fit: contain;
+}
+
+.tagline {
+    font-size: 10px;
+    color: #333;
+    margin-top: 4px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+    /* Increased gap */
+    align-items: center;
+}
+
+.navLink {
+    font-family: var(--font-space), sans-serif;
+    font-size: 16px;
+    /* Slightly larger */
+    font-weight: 400;
+    /* Regular weight */
+    color: var(--text-dark);
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--primary-orange);
+}
+
+.ctaBtn {
+    padding: 12px 28px;
+    border: 1px solid var(--text-dark);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    background: transparent;
+    color: var(--text-dark);
+    transition: all 0.2s;
+    font-family: var(--font-space), sans-serif;
+}
+
+.ctaBtn:hover {
+    background: var(--text-dark);
+    color: var(--white);
+}
+
+@media (max-width: 960px) {
+    .nav {
+        display: none;
+    }
+}

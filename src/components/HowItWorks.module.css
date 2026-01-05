@@ -1,0 +1,165 @@
+.section {
+    padding: 80px 20px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.headingWrapper {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.heading {
+    display: inline-block;
+    background-color: var(--primary-orange);
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-space), sans-serif;
+}
+
+.subHeading {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+    color: var(--text-dark);
+    max-width: 300px;
+    /* Constrained width as per image layout looks like */
+    line-height: 1.4;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    /* Fill available space */
+    max-width: none;
+    /* Provide no constraints */
+    /* Left aligned or centered? Image shows left aligned title but centered content? Let's check alignment. Image shows heading aligned with cards. */
+    margin: 0;
+    /* Align with left */
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    background: #F3F3F3;
+    /* Inactive grey */
+    border: 2px solid #11121E;
+    border-radius: 45px;
+    /* Large radius */
+    padding: 32px 48px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 6px 6px 0px #11121E;
+    /* Hard shadow */
+}
+
+.step:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 7px 7px 0px #11121E;
+}
+
+.stepHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.stepNumber {
+    font-family: var(--font-space), sans-serif;
+    font-size: 48px;
+    /* Large numbering */
+    font-weight: 500;
+    margin-right: 32px;
+    color: #000000;
+    line-height: 1;
+}
+
+.stepTitle {
+    flex: 1;
+    font-family: var(--font-space), sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.toggleButton {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #11121E;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    color: #11121E;
+    transition: all 0.2s;
+}
+
+/* Active State */
+.stepActive {
+    background: var(--primary-orange);
+}
+
+.stepActive .stepNumber,
+.stepActive .stepTitle {
+    color: #000000;
+}
+
+.stepActive .toggleButton {
+    background: #FFFFFF;
+    /* White circle */
+    border-color: #11121E;
+    color: #000000;
+}
+
+.stepContent {
+    margin-top: 24px;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Subtle divider */
+    margin-bottom: 24px;
+}
+
+.stepDescription {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .step {
+        padding: 24px;
+        border-radius: 32px;
+    }
+
+    .stepNumber {
+        font-size: 32px;
+        margin-right: 16px;
+    }
+
+    .stepTitle {
+        font-size: 18px;
+    }
+
+    .toggleButton {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+}

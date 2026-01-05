@@ -1,0 +1,115 @@
+.section {
+    padding: 80px 20px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.container {
+    background-color: #F3F3F3;
+    border-radius: 45px;
+    padding: 60px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.heading {
+    font-family: var(--font-space), sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #000000;
+}
+
+.price {
+    font-family: var(--font-space), sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #000000;
+}
+
+.description {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.joinButton {
+    display: inline-block;
+    background-color: var(--primary-orange);
+    color: #FFFFFF;
+    font-family: var(--font-space), sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.joinButton:hover {
+    opacity: 0.9;
+}
+
+.imageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.image {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 960px) {
+    .section {
+        padding: 40px 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+        border-radius: 32px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 28px;
+        /* Reduced for mobile */
+    }
+
+    .imageWrapper {
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .image {
+        max-height: 200px;
+        /* Constrain image height */
+    }
+}

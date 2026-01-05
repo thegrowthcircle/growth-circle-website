@@ -1,0 +1,131 @@
+.hero {
+    padding: 80px 20px 0;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.mainTitle {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--primary-orange);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.subTitle {
+    font-family: var(--font-space), sans-serif;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.subTitle strong {
+    font-weight: 700;
+}
+
+.featuresList {
+    font-family: var(--font-space), sans-serif;
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 32px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.primaryBtn {
+    font-family: var(--font-space), sans-serif;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    transition: background 0.2s;
+}
+
+.primaryBtn:hover {
+    background-color: #d65a10;
+}
+
+.imageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImage {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+@media (max-width: 960px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding-top: 40px;
+        /* Reduced top padding */
+    }
+
+    .mainTitle {
+        font-size: 40px;
+        /* Heavily reduced from 64px */
+    }
+
+    .subTitle {
+        font-size: 20px;
+        /* Reduced from 32px */
+    }
+
+    .primaryBtn {
+        width: 100%;
+        /* Full width button */
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+
+    .heroImage {
+        max-height: 300px;
+    }
+}

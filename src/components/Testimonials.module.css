@@ -1,0 +1,211 @@
+.section {
+    padding: 80px 20px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.headingWrapper {
+    flex-shrink: 0;
+}
+
+.heading {
+    display: inline-block;
+    background-color: var(--primary-orange);
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-space), sans-serif;
+}
+
+.headerDescription {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+    color: #11121E;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.carouselContainer {
+    background-color: #191A23;
+    /* Dark background */
+    border-radius: 45px;
+    padding: 80px 0;
+    overflow: hidden;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.track {
+    --item-width: 600px;
+    --gap: 40px;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    gap: var(--gap);
+    /* No padding-left to simplify centering calculation */
+}
+
+.slide {
+    flex: 0 0 var(--item-width);
+    width: var(--item-width);
+    opacity: 0.5;
+    /* Fade inactive slides */
+    transition: opacity 0.5s;
+    /* Scale down inactive? */
+    transform: scale(0.9);
+    transition: all 0.5s;
+}
+
+.activeSlide {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.card {
+    border: 1px solid #FF7900;
+    border-radius: 45px;
+    padding: 48px;
+    position: relative;
+    margin-bottom: 40px;
+    /* Space for the tail */
+    background: transparent;
+    height: 320px;
+    /* Fixed height for alignment */
+    display: flex;
+    align-items: center;
+}
+
+/* Speech bubble tail */
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 60px;
+    width: 32px;
+    height: 32px;
+    background-color: #191A23;
+    /* Dark background to cover border */
+    border-bottom: 1px solid #FF7900;
+    border-right: 1px solid #FF7900;
+    transform: rotate(45deg);
+}
+
+.quote {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+.authorInfo {
+    padding-left: 65px;
+    /* Align with tail */
+}
+
+.author {
+    color: var(--primary-orange);
+    font-family: var(--font-space), sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.role {
+    color: #FFFFFF;
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+.arrowButton {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.2s;
+    line-height: 0;
+}
+
+.arrowButton:hover {
+    color: var(--primary-orange);
+}
+
+.indicators {
+    display: flex;
+    gap: 16px;
+}
+
+.indicator {
+    color: #FFFFFF;
+    /* White */
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.activeIndicator {
+    color: var(--primary-orange);
+    /* Orange active */
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 20px;
+    }
+
+    .headerContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .carouselContainer {
+        border-radius: 30px;
+        padding: 40px 0;
+    }
+
+    .track {
+        --item-width: 85vw;
+        --gap: 20px;
+    }
+
+    .card {
+        padding: 32px;
+        /* Increased from 24px */
+        height: auto;
+        min-height: 280px;
+    }
+
+    .quote {
+        font-size: 16px;
+    }
+
+    .slide {
+        transform: scale(0.95);
+    }
+
+    .activeSlide {
+        transform: scale(1);
+    }
+}
