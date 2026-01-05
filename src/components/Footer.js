@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
+    console.log("CI/CD Pipeline Check: Active 🚀");
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
