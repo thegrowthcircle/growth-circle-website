@@ -24,14 +24,13 @@ jobs:
       - name: Build Website
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: ./public_html/
-          log-level: verbose
-          # Safer upload for shared hosting
-          ftp-args: --parallel=1
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via LFTP
+        run: |
+          lftp -e "set ssl:verify-certificate no; \
+                   open ${{ secrets.FTP_SERVER }}; \
+                   user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; \
+                   mirror --reverse --verbose --delete --parallel=2 out/ public_html/; \
+                   bye"
