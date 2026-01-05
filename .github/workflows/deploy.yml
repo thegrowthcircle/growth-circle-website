@@ -24,17 +24,17 @@ jobs:
       - name: Build Website
         run: npm run build
 
-      - name: Verify Build Output
-        run: ls -la out/
-        
+      - name: Prepare Build Structure
+        run: |
+          mkdir deploy_package
+          mv out deploy_package/public_html
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: public_html/
-          # If your website is still 403, try changing the line above to:
-          # server-dir: ./
+          local-dir: ./deploy_package/
+          server-dir: ./
           log-level: verbose
