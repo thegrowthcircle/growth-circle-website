@@ -32,5 +32,6 @@ jobs:
           lftp -e "set ssl:verify-certificate no; \
                    open ${{ secrets.FTP_SERVER }}; \
                    user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; \
-                   mirror --reverse --verbose --delete --parallel=2 out/ public_html/; \
+                   cd public_html; \
+                   mirror --reverse --verbose --delete --parallel=2 out/ .; \
                    bye"
