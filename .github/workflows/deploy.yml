@@ -33,5 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ./public_html/
-          state-name: ~/.ftp-deploy-sync-state.json
+          state-name: .ftp-deploy-sync-state.json
           log-level: verbose
