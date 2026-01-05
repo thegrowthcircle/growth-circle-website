@@ -221,6 +221,7 @@
     .newsletter {
         width: 100%;
         padding: 32px 20px;
+        display: none;
     }
 
     .subscribeForm {
