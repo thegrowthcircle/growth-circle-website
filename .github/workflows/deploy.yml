@@ -24,17 +24,14 @@ jobs:
       - name: Build Website
         run: npm run build
 
-      - name: Prepare Build Structure
-        run: |
-          mkdir deploy_package
-          mv out deploy_package/public_html
-
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./deploy_package/
-          server-dir: ./
+          local-dir: ./out/
+          server-dir: ./public_html/
           log-level: verbose
+          # Safer upload for shared hosting
+          ftp-args: --parallel=1
