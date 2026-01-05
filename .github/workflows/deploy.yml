@@ -29,13 +29,9 @@ jobs:
 
       - name: Deploy via LFTP
         run: |
-          # Strategy: Shotgun Deployment (Try ALL likely paths)
-          
-          echo "Attempt 1: Standard public_html"
-          lftp -e "set ssl:verify-certificate no; open ${{ secrets.FTP_SERVER }}; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mkdir -p public_html; cd public_html; mirror --reverse --verbose --parallel=2 out/ .; bye" || true
-
-          echo "Attempt 2: 'domains' structure"
-          lftp -e "set ssl:verify-certificate no; open ${{ secrets.FTP_SERVER }}; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mkdir -p domains/thegrowthcircle.co.in/public_html; cd domains/thegrowthcircle.co.in/public_html; mirror --reverse --verbose --parallel=2 out/ .; bye" || true
-          
-          echo "Attempt 3: Direct domain folder"
-          lftp -e "set ssl:verify-certificate no; open ${{ secrets.FTP_SERVER }}; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mkdir -p thegrowthcircle.co.in/public_html; cd thegrowthcircle.co.in/public_html; mirror --reverse --verbose --parallel=2 out/ .; bye" || true
+          # Strategy: Absolute Path Mirroring
+          lftp -e "set ssl:verify-certificate no; \
+                   open ${{ secrets.FTP_SERVER }}; \
+                   user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; \
+                   mirror --reverse --verbose --parallel=2 out/ /public_html/; \
+                   bye"
