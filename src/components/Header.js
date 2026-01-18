@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 
 export default function Header() {
+    console.log("Mobile Fix v6 (WhatsApp) 🚀");
     return (
         <header className={styles.header}>
             <Link href="/" className={styles.logoWrapper}>
@@ -24,9 +25,9 @@ export default function Header() {
                 <Link href="#faq" className={styles.navLink}>FAQ's</Link>
             </nav>
 
-            <Link href="#pricing" className={styles.ctaBtn}>
+            <a href="https://wa.me/917075742095?text=Hi%2C%0A%0AI%20am%20interested%20to%20know%20more%20about%20The%20Growth%20Circle." className={styles.ctaBtn} target="_blank" rel="noopener noreferrer">
                 Become our member
-            </Link>
+            </a>
         </header>
     );
 }

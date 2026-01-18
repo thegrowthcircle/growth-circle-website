@@ -61,6 +61,7 @@
     color: var(--text-dark);
     transition: all 0.2s;
     font-family: var(--font-space), sans-serif;
+    white-space: nowrap;
 }
 
 .ctaBtn:hover {
@@ -69,7 +70,22 @@
 }
 
 @media (max-width: 960px) {
+    .header {
+        padding: 0 20px;
+        height: 80px;
+    }
+
     .nav {
         display: none;
+    }
+
+    .ctaBtn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .logoImage {
+        width: 140px;
+        height: auto;
     }
 }

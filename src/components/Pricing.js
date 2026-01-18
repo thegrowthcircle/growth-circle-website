@@ -12,7 +12,7 @@ export default function Pricing() {
                         Includes Workshops + Networking + Promotion + Meets + <br />
                         2 months Free Access to The Profesor App
                     </p>
-                    <button className={styles.joinButton}>Join Now</button>
+                    <a href="https://wa.me/917075742095?text=Hi%2C%0A%0AI%20am%20interested%20to%20know%20more%20about%20The%20Growth%20Circle." className={styles.joinButton} target="_blank" rel="noopener noreferrer">Join Now</a>
                 </div>
                 <div className={styles.imageWrapper}>
                     <Image

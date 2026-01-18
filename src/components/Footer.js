@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
-    console.log("CI/CD Pipeline Check: Active 🚀");
+    console.log("Mobile Fix v13 (Workshop Content) 🚀");
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
@@ -51,14 +51,14 @@ export default function Footer() {
                         <div className={styles.contactBadge}>Contact us:</div>
 
                         <div className={styles.infoItem}>
-                            Email: <a href="mailto:info@growthcircle.com">info@growthcircle.com</a>
+                            Email: <a href="mailto:thegrowthcircle31@gmail.com">thegrowthcircle31@gmail.com</a>
                         </div>
                         <div className={styles.infoItem}>
-                            Phone: <a href="tel:5555678901">555-567-8901</a>
+                            Phone: <a href="tel:7075742095">7075742095</a>
                         </div>
                         <div className={styles.infoItem}>
-                            Address: 1234 Main St<br />
-                            Hyderabad City, Telangana State 500082
+                            Address: 3rd Floor, NSL Icon, Banjara Hills,<br />
+                            Rd. 12, Hyderabad - 500034
                         </div>
                     </div>
 

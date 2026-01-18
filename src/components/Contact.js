@@ -1,7 +1,27 @@
 "use client";
+import { useState } from 'react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+    console.log("Mobile Fix v8 (Contact Form) 🚀");
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, email, message } = formData;
+        const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+        const whatsappUrl = `https://wa.me/917075742095?text=${text}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <section id="contact" className={styles.section}>
             <div className={styles.headerContainer}>
@@ -15,13 +35,16 @@ export default function Contact() {
 
             <div className={styles.container}>
                 <div className={styles.formColumn}>
-                    <form className={styles.form}>
+                    <form className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.fieldGroup}>
                             <label className={styles.label}>Name</label>
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Name"
                                 className={styles.input}
+                                value={formData.name}
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -29,8 +52,11 @@ export default function Contact() {
                             <label className={styles.label}>Email*</label>
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Email"
                                 className={styles.input}
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
                             />
                         </div>
@@ -38,9 +64,12 @@ export default function Contact() {
                         <div className={styles.fieldGroup}>
                             <label className={styles.label}>Message*</label>
                             <textarea
+                                name="message"
                                 placeholder="Message"
                                 className={styles.textarea}
                                 rows={5}
+                                value={formData.message}
+                                onChange={handleChange}
                                 required
                             ></textarea>
                         </div>

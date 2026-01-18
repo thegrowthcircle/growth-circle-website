@@ -4,12 +4,12 @@ const readline = require("readline-sync");
 const { execSync } = require("child_process");
 
 const config = {
-    user: "u123456789",
+    user: "u247576081",
     // Password will be prompted
     host: "46.202.182.226",
     port: 21,
     localRoot: __dirname + "/out/",
-    remoteRoot: "/public_html/",
+    remoteRoot: "/domains/thegrowthcircle.co.in/public_html/",
     include: ["*", "**/*"], // Upload everything in 'out'
     exclude: [".DS_Store", "*.map"],
     deleteRemote: false, // Safer to not delete everything first, but 'true' gives a cleaner sync. Let's stick to false for safety first run.

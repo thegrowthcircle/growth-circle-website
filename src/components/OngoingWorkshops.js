@@ -22,7 +22,7 @@ export default function OngoingWorkshops() {
                         <div className={styles.card}>
                             <div className={styles.imageWrapper}>
                                 <Image
-                                    src="/images/banner.png"
+                                    src="/images/Loading-Graphics.jpg"
                                     alt="Generative AI Marketing Mastermind"
                                     width={500}
                                     height={300}
@@ -31,9 +31,9 @@ export default function OngoingWorkshops() {
                             </div>
                             <div className={styles.separator}></div>
                             <div className={styles.content}>
-                                <h3 className={styles.cardTitle}>Generative AI Marketing Mastermind</h3>
-                                <p className={styles.cardDescription}>Learn the Basics of Digital Marketing in One Day</p>
-                                <button className={styles.registerButton}>Register Now</button>
+                                <h3 className={styles.cardTitle}>Coming Soon</h3>
+                                <p className={styles.cardDescription}>Loading up soon...</p>
+                                <button className={styles.registerButton}>Coming Soon</button>
                             </div>
                         </div>
                     </ScrollReveal>

@@ -81,9 +81,9 @@ export default function Hero() {
                     24 Online Workshops • Weekly Business Promotion •<br />
                     Quarterly Meets • The Profesor App Access
                 </p>
-                <button className={styles.primaryBtn}>
+                <a href="https://wa.me/917075742095?text=Hi%2C%0A%0AI%20am%20interested%20to%20know%20more%20about%20The%20Growth%20Circle." className={styles.primaryBtn} target="_blank" rel="noopener noreferrer">
                     Book a consultation
-                </button>
+                </a>
             </div>
             <div className={styles.imageWrapper}>
                 <Image

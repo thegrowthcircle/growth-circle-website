@@ -306,4 +306,16 @@
         height: 100%;
         max-width: 100%;
     }
+
+    .cardImageWrapper {
+        display: none;
+    }
+
+    .headingBadge {
+        font-size: 24px;
+        white-space: normal;
+        max-width: 100%;
+        line-height: 1.3;
+        text-align: center;
+    }
 }

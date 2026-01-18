@@ -48,6 +48,7 @@ const benefitsData = [
 ];
 
 export default function Benefits() {
+    console.log("Mobile Fix v6 (WhatsApp) 🚀");
     return (
         <section id="benefits" className={styles.section}>
             <div className={styles.headingWrapper}>
@@ -93,9 +94,9 @@ export default function Benefits() {
                         <br />
                         A space where networking is meaningful, learning is continuous, and opportunities grow organically.
                     </p>
-                    <Link href="/join" className={styles.joinButton}>
+                    <a href="https://wa.me/917075742095?text=Hi%2C%0A%0AI%20am%20interested%20to%20know%20more%20about%20The%20Growth%20Circle." className={styles.joinButton} target="_blank" rel="noopener noreferrer">
                         Join Now
-                    </Link>
+                    </a>
                 </div>
                 <div className={styles.whyImageWrapper}>
                     <Image
