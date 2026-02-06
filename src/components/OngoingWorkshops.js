@@ -31,7 +31,7 @@ export default function OngoingWorkshops() {
                             </div>
                             <div className={styles.separator}></div>
                             <div className={styles.content}>
-                                <h3 className={styles.cardTitle}>Coming Soon</h3>
+                                <h3 className={styles.cardTitle}>AI For Business</h3>
                                 <p className={styles.cardDescription}>Loading up soon...</p>
                                 <button className={styles.registerButton}>Coming Soon</button>
                             </div>
